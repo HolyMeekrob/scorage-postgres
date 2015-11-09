@@ -1,15 +1,18 @@
-import { isNil, any } from '../../util';
-import { getConditions } from '../subqueries/conditionsBuilder';
-import {
-	isTableNameValid,
-	getMisusedColumns,
-	getInvalidColumns,
-	getTypeMismatchedColumns,
-	getFormattedValue,
-	removeExtraWhitespace
-} from './queryBuilderUtil';
+import util from '../../util';
+import conditionsBuilder from '../subqueries/conditionsBuilder';
+import queryBuilderUtil from './queryBuilderUtil';
 
 export default (() => {
+	const { any, isNil } = util;
+	const {
+		isTableNameValid,
+		getMisusedColumns,
+		getInvalidColumns,
+		getTypeMismatchedColumns,
+		getFormattedValue,
+		removeExtraWhitespace
+	} = queryBuilderUtil;
+
 	const checkValuesForUpdate = (schema, values) => {
 		if (!any(Object.keys(values))) {
 			throw new Error('Must update at least one value');
@@ -49,7 +52,7 @@ export default (() => {
 			return `${col} = ${value}`;
 		});
 
-		const conditionsStr = getConditions(conditions);
+		const conditionsStr = conditionsBuilder.getConditions(conditions);
 
 		return removeExtraWhitespace(`UPDATE ${schema.name} SET ${querySets}\
 			${conditionsStr} RETURNING *`

@@ -1,9 +1,11 @@
 import baseModel from './baseModel';
 import player from './player';
 import roster from './rosterSpot';
-import { deepFreeze } from '../../util';
+import util from '../../util';
 
 export default (() => {
+	const { deepFreeze } = util;
+
 	const schema = deepFreeze({
 		name: 'team',
 		canDelete: false,

@@ -1,13 +1,13 @@
-import { select } from './selectQueryBuilder';
-import { insert } from './insertQueryBuilder';
-import { update } from './updateQueryBuilder';
-import { del } from './deleteQueryBuilder';
+import selectBuilder from './selectQueryBuilder';
+import insertBuilder from './insertQueryBuilder';
+import updateBuilder from './updateQueryBuilder';
+import deleteBuilder from './deleteQueryBuilder';
 
 export default (() => {
 	return Object.freeze({
-		select,
-		insert,
-		update,
-		del
+		select: selectBuilder.select,
+		insert: insertBuilder.insert,
+		update: updateBuilder.update,
+		del: deleteBuilder.del
 	});
 })();

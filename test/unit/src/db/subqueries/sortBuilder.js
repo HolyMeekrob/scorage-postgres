@@ -1,6 +1,8 @@
-import { getSort } from '../../../../../src/db/subqueries/sortBuilder';
+import sortBuilder from '../../../../../src/db/subqueries/sortBuilder';
 import chai from 'chai';
 chai.should();
+
+const { getSort } = sortBuilder;
 
 describe('sortBuilder', () => {
 	describe('#getSort()', () => {

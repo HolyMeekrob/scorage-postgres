@@ -1,7 +1,10 @@
-import { any, isNil, includes } from '../../util';
-import { removeExtraWhitespace } from '../queries/queryBuilderUtil';
+import util from '../../util';
+import queryBuilderUtil from '../queries/queryBuilderUtil';
 
 export default (() => {
+	const { any, isNil, includes } = util;
+	const { removeExtraWhitespace } = queryBuilderUtil;
+
 	const checkJoins = (joins) => {
 		if (!Array.isArray(joins)) {
 			throw new Error('Sources must be an array');

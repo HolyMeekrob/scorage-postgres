@@ -1,6 +1,8 @@
-import { getSources } from '../../../../../src/db/subqueries/sourcesBuilder';
+import sourcesBuilder from '../../../../../src/db/subqueries/sourcesBuilder';
 import chai from 'chai';
 chai.should();
+
+const { getSources } = sourcesBuilder;
 
 describe('sourcesBuilder', () => {
 	describe('#getSources()', () => {

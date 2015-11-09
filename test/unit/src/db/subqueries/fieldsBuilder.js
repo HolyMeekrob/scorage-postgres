@@ -1,6 +1,8 @@
-import { getFields } from '../../../../../src/db/subqueries/fieldsBuilder';
+import fieldsBuilder from '../../../../../src/db/subqueries/fieldsBuilder';
 import chai from 'chai';
 chai.should();
+
+const { getFields } = fieldsBuilder;
 
 describe('fieldsBuilder', () => {
 	describe('#getFields()', () => {

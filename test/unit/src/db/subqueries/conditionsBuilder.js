@@ -1,9 +1,8 @@
-import {
-	getConditions
-} from '../../../../../src/db/subqueries/conditionsBuilder';
-
+import conditionsBuilder from '../../../../../src/db/subqueries/conditionsBuilder';
 import chai from 'chai';
 chai.should();
+
+const { getConditions } = conditionsBuilder;
 
 describe('conditionsBuilder', () => {
 	describe('#getConditions', () => {

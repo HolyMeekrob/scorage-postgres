@@ -1,8 +1,10 @@
 import baseModel from './baseModel';
 import season from './season';
-import { deepFreeze } from '../../util';
+import util from '../../util';
 
 export default (() => {
+	const { deepFreeze } = util;
+
 	const schema = deepFreeze({
 		name: 'league',
 		canDelete: false,

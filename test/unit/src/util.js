@@ -1,4 +1,8 @@
-import {
+import util from '../../../src/util';
+import chai from 'chai';
+chai.should();
+
+const {
 	isNil,
 	single,
 	isIterable,
@@ -7,10 +11,7 @@ import {
 	difference,
 	intersection,
 	deepFreeze
-} from '../../../src/util';
-
-import chai from 'chai';
-chai.should();
+} = util;
 
 describe('util', () => {
 	describe('#isNil()', () => {

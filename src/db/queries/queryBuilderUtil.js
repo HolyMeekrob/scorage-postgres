@@ -1,6 +1,8 @@
-import { isNil, difference, intersection } from '../../util';
+import util from '../../util';
 
 export default (() => {
+	const { isNil, difference, intersection } = util;
+
 	const isTableNameValid = (schema) => {
 		return !isNil(schema) && (typeof schema.name === 'string');
 	};

@@ -1,14 +1,17 @@
-import { isNil, difference, any } from '../../util';
-import {
-	isTableNameValid,
-	getFormattedValue,
-	getMisusedColumns,
-	getInvalidColumns,
-	getTypeMismatchedColumns,
-	removeExtraWhitespace
-} from './queryBuilderUtil';
+import util from '../../util';
+import queryBuilderUtil from './queryBuilderUtil';
 
 export default (() => {
+	const { isNil, difference, any } = util;
+	const {
+		isTableNameValid,
+		getFormattedValue,
+		getMisusedColumns,
+		getInvalidColumns,
+		getTypeMismatchedColumns,
+		removeExtraWhitespace
+	} = queryBuilderUtil;
+
 	const checkValuesForInsert = (schema, values) => {
 		const schemaColumns = Object.keys(schema.columns);
 		const valueColumns = Object.keys(values);

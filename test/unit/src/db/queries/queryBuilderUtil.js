@@ -1,4 +1,8 @@
-import {
+import queryBuilderUtil from '../../../../../src/db/queries/queryBuilderUtil';
+import chai from 'chai';
+chai.should();
+
+const {
 	isTableNameValid,
 	isTypeMatch,
 	getFormattedValue,
@@ -6,9 +10,7 @@ import {
 	getInvalidColumns,
 	getTypeMismatchedColumns,
 	removeExtraWhitespace
-} from '../../../../../src/db/queries/queryBuilderUtil';
-import chai from 'chai';
-chai.should();
+} = queryBuilderUtil;
 
 describe('queryBuilderUtil', () => {
 	describe('#isTableNameValid()', () => {

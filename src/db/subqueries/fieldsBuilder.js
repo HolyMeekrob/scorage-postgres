@@ -1,6 +1,8 @@
-import { any, isNil } from '../../util';
+import util from '../../util';
 
 export default (() => {
+	const { any, isNil } = util;
+
 	const checkFields = (fieldsToCheck) => {
 		if (isNil(fieldsToCheck)) {
 			return true;

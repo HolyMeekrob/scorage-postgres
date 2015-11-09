@@ -1,8 +1,10 @@
 import baseModel from './baseModel';
 import playModel from './play';
-import { deepFreeze } from '../../util';
+import util from '../../util';
 
 export default (() => {
+	const { deepFreeze } = util;
+
 	const schema = deepFreeze({
 		name: 'match',
 		canDelete: true,
