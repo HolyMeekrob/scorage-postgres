@@ -1,8 +1,10 @@
 import db from '../client';
 import queryBuilder from '../queries/queryBuilder';
-import { single } from '../../util';
+import util from '../../util';
 
 export default (schema) => {
+	const { single } = util;
+
 	const makeSingle = (promise) => {
 		return promise.then((rows) => {
 			return Promise.resolve(single(rows));
